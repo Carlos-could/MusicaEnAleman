@@ -17,6 +17,7 @@ html {
 body{
 	background-color: var(--fondo);
 	font-family: 'lato', sans-serif;
+	font-size: 1.5rem;
 }
 a{
 	text-decoration: none;
@@ -43,7 +44,6 @@ img{
 	justify-content: center;
 	align-items: flex-end;
 	padding-bottom: 20px;
-
 }
 .navegacion{
 	display: flex;
@@ -51,14 +51,19 @@ img{
 	justify-content: space-around;
 }
 .navegacion a{
-	display: flex;
-	justify-content: space-around;
 	font-size: 2rem;
+	transition: all .3s ease;
 }
+.navegacion a:hover{
+	color: red;
+	font-weight: 700;
+}
+/* ------------Lista de Canciones------------ */
 .lista-canciones{
 	padding: 2rem 0;
 	display: grid;
-	/* grid-template-columns: repeat(3,1fr); */
+	grid-gap: 2rem;
+
 }
 @media (min-width: 480px) {
 	.lista-canciones{
@@ -77,15 +82,18 @@ img{
 }
 @media (min-width: 1200px) {
 	.lista-canciones{
-		grid-template-columns: repeat(6,1fr);
+		grid-template-columns: repeat(5,1fr);
+
+	}
+	.caracteristicas p{
+		font-size: 1.3rem;
 	}
 }
 .item{
-	padding: 1rem;
+	/* padding: 1rem; */
 }
 .descripcion{
 	padding: 5px;
-	font-size: 1.5rem;
 }
 .caracteristicas{
 	display: flex;
@@ -129,9 +137,9 @@ p.de-que-trata{
 	color:  #808b96 ;
 }
 
-/* Footer */
+/* ------------Footer------------ */
 
-footer{
+.footer{
 	background-color: #2F3233;
 	color: #ffffff;
 	display: grid;
@@ -144,39 +152,33 @@ footer{
 }
 @media (min-width: 480px) {
 	.contenedor-footer{
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: repeat(2, 1fr);
-		margin: 0 auto;
-		width: 1200px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
 	}
-	.contenedor-footer > a{
-		grid-column: 1/4;
+}
+@media (min-width: 992px) {
+	.contenedor-footer{
+		display: block;
 	}
-	.contenedor-footer h1{
-		grid-column: 2/3;
-		grid-row: 2/3;
+	.contenedor-footer .info{
+		/* display: block; */
+		justify-content: center;
 	}
 }
 
-
-
-
+.contenedor-footer a{
+	color: var(--mittel);
+	font-size: 3rem;
+	text-align: center;
+}
 .contenedor-footer h1{
 	margin: .5rem 0;
 }
 .contenedor-footer .derechos{
 	display: none!important;
 }
-.contenedor-footer a{
-	color: var(--mittel);
-	font-size: 3rem;
-	text-align: center;
-}
-/* .contenedor-footer >p{
-	font-size: 1.2rem;
-	margin: .5rem;
-} */
 .info{
 	display: flex;
 	justify-content: space-around;
